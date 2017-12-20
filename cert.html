@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+
+        .cert-container {
+            font-family: 'Indie Flower', cursive;
+            width: 3499px;
+            height: 2472px;
+            border: 1px solid black;
+        }
+
+        .cert-name {
+            width: 3506px;
+            text-align: center;
+            color: #50b5f8;
+            position: absolute;
+            top: 430px;
+            font-size: 30em;
+            z-index: 2;
+        }
+
+    
+
+        .cert-text {
+            position: absolute;
+            width: 3509px;
+            text-align: center;
+            top: 1155px;
+            font-size: 5em;
+            z-index: 2;
+        }
+
+        .cert-text-2 {
+            position: absolute;
+            width: 3509px;
+            text-align: center;
+            top: 1345px;
+            font-size: 5em;
+            z-index: 2;
+        }
+
+        img {
+            position: absolute;
+            width: 3499px;
+            height: 2472px;
+            z-index: 1;
+        }
+    </style>
+
+    <div class="cert-container">
+        <div class="cert-container">
+            <t4 type="media" id="149283" formatter="image/*" />
+            <!--<img src="cert.png" />-->
+            <span id="cert-name" class="cert-name"></span>
+            <span id="cert-text" class="cert-text"></span>
+            <span id="cert-text-2" class="cert-text-2"></span>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script>
+
+        var name;
+        var sex;
+        var year;
+        var rank;
+        var numBirths;
+        var text1;
+        var text2;
+
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) { return pair[1]; }
+            }
+            return (false);
+        }
+
+        name = getQueryVariable('name');
+        sex = getQueryVariable('sex');
+        year = getQueryVariable('year');
+        rank = getQueryVariable('rank');
+        numBirths = getQueryVariable('numbirths');
+
+        if (sex == "female") {           
+            $("#cert-name").css("color", "#ffa3c8");
+        }
+
+        text1 = "In " + year + ", " + name + " was ranked " + rank + " of all baby " + sex + " registered in Ireland";
+        text2 = "In total, " + numBirths + " babies were registered with the name " + name + ".";
+        $("#cert-name").text(name);
+        $("#cert-text").html(text1);
+        $("#cert-text-2").text(text2);
+
+    </script>
+
+</body>
+</html>

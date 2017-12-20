@@ -1,0 +1,77 @@
+﻿<div id="spinner" style="display: none">
+    <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+</div>
+<div id="loading" class="baby-container">
+    <div id="loadingPdfContainer">
+        <div class="form-gender">
+            <!-- Pick Gender -->
+            <form>
+                <fieldset class="form-options">
+                    <h1 class="form-question" id="pageTitle">Baby Names of Ireland <span id="startYear"></span> - <span id="endYear"></span></h1>
+                    <p class="form-answer"><input class="boy" id="boy" name="match" type="radio" value="boy"> <label class="boy" for="boy"><i aria-hidden="true" class="fa fa-mars fa-2x"></i> Boy</label></p>
+                    <p class="form-answer"><input class="girl" id="girl" name="match" type="radio" value="girl"> <label for="girl"><i aria-hidden="true" class="fa fa-venus fa-2x"></i> Girl</label></p>
+                </fieldset>
+            </form>
+        </div>
+
+  
+
+            <div class="form-name">
+                <!-- Pick Name -->
+                <div class="text-input">
+                    <input autocomplete="off" placeholder="Enter a name" class="ui-corner-all ui-autocomplete-input" id="name-input" name="name" type="search" value="" maxlength="10">
+                    <select id="selectYearName" name="number"></select>
+                </div>
+                <div class="button-container">
+                    <input class="ui-button ui-widget ui-corner-all" id="submit" type="submit" value="Submit">
+                    <input class="ui-button ui-widget ui-corner-all" id="random" type="submit" value="Find me a name..">
+                </div>
+            </div>
+
+
+
+            <div class="form-name-output" id="latestFigures">
+
+                <!-- Name Info Ouput -->
+                <p id="noRecords">There are no records for <span class="no-records"></span>
+                    <br /><br />
+                    <small>* Only names with 3 or more instances in the relevant year are included.</small>
+                   
+                </p>
+                <p id="p1">In <span class="pYear"></span> there was no baby <span class="pSex"></span>s registered with the name <span class="pName"></span> 
+                    <br /><br />
+                    <small>* Only names with 3 or more instances in the relevant year are included.</small>
+                </p>
+                <p id="p2">In <span class="pYear"></span>, <span class="pName"></span> was ranked <span class="pRank"></span> of all baby <span class="pSex"></span>s registered in Ireland.  </p>
+                <p id="p3">In total, <span class="pTotal"></span> babies were registered with the name <span class="pName"></span></p>
+                <a class="dl-button" id="certButton" href="" download></a>
+                <a class="dl-button" id="dl-pdf" href="" target="_blank"> Click to Download</a>
+
+
+            </div>
+        </div>
+
+
+        <div class="highchart-container" id="highchart-container">
+
+        </div>
+
+
+
+        <div class="datatables-container" id="tableContainerBoy">
+            <table id="datatable-boy" class="display" width="100">
+                <caption>Top Boys Names  <select id="selectYearBoys" name="number"></select></caption>
+
+            </table>
+        </div>
+        <div class="datatables-container" id="tableContainerGirl">
+            <table id="datatable-girl" class="display" width="100">
+                <caption>Top Girls Names <select id="selectYearGirls" name="number"></select></caption>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+
