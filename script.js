@@ -54,7 +54,7 @@ $(document).ready(function () {
         $("#endYear").text(boysYears.id[boysNumYears - 1]);
         for (i = 0; i < numNamesBoys; i++) {
 
-            availableNamesBoys.push(dsBoys.Dimension("Name").Category(i).label);
+            availableNamesBoys.push(boysNames.Category(i).label);
             availableNamesBoysIds.push(boysNames.id[i]);
             var counter = 0;
             // if name[i] occurs in more than x years
@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 
                 if (counter >= threshold) {
-                    availableNamesBoysRandom.push(dsBoys.Dimension("Name").Category(i).label);
+                    availableNamesBoysRandom.push(boysNames.Category(i).label);
 
                     break
                 }
@@ -99,7 +99,7 @@ $(document).ready(function () {
         // page load autocomplete for boys and girls
         for (i = 0; i < numNamesGirls; i++) {
 
-            availableNamesGirls.push(dsGirls.Dimension("Name").Category(i).label);
+            availableNamesGirls.push(girlsNames.Category(i).label);
             availableNamesGirlsIds.push(girlsNames.id[i]);
             var counter = 0;
             // if name[i] occurs in more than x years
@@ -108,7 +108,7 @@ $(document).ready(function () {
 
 
                 if (counter >= threshold) {
-                    availableNamesGirlsRandom.push(dsGirls.Dimension("Name").Category(i).label);
+                    availableNamesGirlsRandom.push(girlsNames.Category(i).label);
 
                     break
                 }
@@ -539,6 +539,7 @@ $(document).ready(function () {
         e.preventDefault();
         var year = $("#selectYearName").val();
         var selectedName = $.trim($("#name-input").val());
+        selectedName = selectedName.replace(" ", "~");
         var name = selectedName;
         var response;
 
@@ -645,7 +646,7 @@ $(document).ready(function () {
             for (i = 0; i < numNamesBoys; i++) {
 
                 var boyItem = [];
-                var boyName = dsBoys.Dimension("Name").Category(i).label;
+                var boyName = boysNames.Category(i).label;
 
                 var boyRank = dsBoys.Data({
                     "Statistic": "VSA05C02",
@@ -724,7 +725,7 @@ $(document).ready(function () {
             for (i = 0; i < numNamesGirls; i++) {
 
                 var girlItem = [];
-                var girlName = dsGirls.Dimension("Name").Category(i).label;
+                var girlName = girlsNames.Category(i).label;
 
                 var girlRank = dsGirls.Data({
                     "Statistic": "VSA12C02",

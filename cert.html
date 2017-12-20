@@ -85,6 +85,7 @@
         }
 
         name = getQueryVariable('name');
+        name = name.replace("~", " ");
         sex = getQueryVariable('sex');
         year = getQueryVariable('year');
         rank = getQueryVariable('rank');
@@ -94,7 +95,7 @@
             $("#cert-name").css("color", "#ffa3c8");
         }
 
-        text1 = "In " + year + ", " + name + " was ranked " + rank + " of all baby " + sex + " registered in Ireland";
+        text1 = "In " + year + ", " + name + " was ranked " + rank + " of all baby " + sex + "s registered in Ireland";
         text2 = "In total, " + numBirths + " babies were registered with the name " + name + ".";
         $("#cert-name").text(name);
         $("#cert-text").html(text1);
